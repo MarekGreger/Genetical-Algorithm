@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algorytm Genetyczny- Problem plecakowy: Plik źródłowy Wczytywanie.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algorytm Genetyczny- Problem plecakowy<span id="projectnumber">&#160;Finałowa wersja</span>
+   </div>
+   <div id="projectbrief">Algorytm działający na zasadzie gentycznej ewolucji znajdującej rozwiązanie problemu plecakowego.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Wczytywanie.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_wczytywanie_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&lt;iostream&gt;</span>    </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;conio.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include&lt;fstream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include&lt;map&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include&quot;nazwy.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_operacje.html#a7acad4e5cc331d64c511aa97678e16a8">Operacje::Wczytywanie_Obiektow</a>(<span class="keywordtype">int</span> Iloscobiektow, std::vector&lt;Obiekt&gt; &amp;dane)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">//srand(time(NULL));</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_struct" href="struct_obiekt.html">Obiekt</a> Przedmiot;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1;i &lt;= Iloscobiektow;i++)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        Przedmiot.<a class="code hl_variable" href="struct_obiekt.html#a55412c4f2c06a6c8b8bb411e13fc1479">Cena</a> = rand() % 100+1;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        Przedmiot.<a class="code hl_variable" href="struct_obiekt.html#a4ca3ea51ca5c7ac913890225ede93667">Waga</a> = rand() % 10+1;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        dane.push_back(Przedmiot);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_osobnik.html#a80b9c696d8fb8cd18dfb87c9362d543a">Osobnik::Generowanie_Osobnika</a>(std::vector&lt;Obiekt&gt;&amp; dane, <span class="keywordtype">int</span> Udzwig, <span class="keywordtype">int</span> Iloscobiektow)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> = 0;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> i = rand() % (Iloscobiektow)+0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> + dane[i].Waga &lt;= Udzwig)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>[i]==0)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a> = <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a>+dane[i].Cena;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> = <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> + dane[i].Waga;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>[i] = 1;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        i = rand() % (Iloscobiektow)+0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="class_osobnik.html#af13de080b8e75999a7bf41c3565768f8">Set_Wynik</a>(<a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a> / Udzwig);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_osobnik.html#a36ac8878b3704aa6d7ad1f1d457863a2">Osobnik::Wyswietl_Chromosom</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;i &lt;<a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>.size();i++)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        std::cout &lt;&lt; <a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>[i] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_osobnik.html#a8c7ee0661299a067ebbc40164ed141e9">Osobnik::Wyswietl_Wynik</a>()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    std::cout &lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt; <a class="code hl_variable" href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Wynik</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><a class="code hl_function" href="class_osobnik.html#a3604c1658113cfc739ba4d23fd02e79c">Osobnik::Osobnik</a>(std::vector&lt;Obiekt&gt;&amp; dane, <span class="keywordtype">int</span> Udzwig, <span class="keywordtype">int</span> Iloscobiektow) </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_variable" href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Wynik</a>=0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> = 0;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a>=0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;i &lt; Iloscobiektow;i++)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>.push_back(0);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="class_osobnik.html#a80b9c696d8fb8cd18dfb87c9362d543a">Generowanie_Osobnika</a>(dane, Udzwig, Iloscobiektow);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_osobnik.html#aee68882d4c36a58946aed16a2a655f47">Osobnik::Aktualizuj_Dane</a>(std::vector&lt;Obiekt&gt;&amp; dane, <span class="keywordtype">int</span> Udzwig)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> = 0;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a> = 0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;i &lt; <a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>.size();i++) </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>[i] == 1)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> = <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> + dane[i].Waga;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a> = <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a>+ dane[i].Cena;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_variable" href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Wynik</a> = <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a> / Udzwig;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a> &gt; Udzwig)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <a class="code hl_variable" href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Wynik</a> = 0;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><a class="code hl_function" href="class_osobnik.html#aff739292c0bf06166c74bcc959f9e6fe">Osobnik::~Osobnik</a>()</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_variable" href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Chromosom</a>.clear();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_osobnik.html#af13de080b8e75999a7bf41c3565768f8">Osobnik::Set_Wynik</a>(<span class="keywordtype">double</span> temp)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_variable" href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Wynik</a> = temp;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keywordtype">double</span>  <a class="code hl_function" href="class_osobnik.html#ac8ae9c3469c0d60f831a4e2d1bda9f1a">Osobnik::Get_Wynik</a>()</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Wynik</a>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keywordtype">double</span>  <a class="code hl_function" href="class_osobnik.html#ace2e26b77ffe5fdf0876051155e8aa8d">Osobnik::Get_Pojemnosc</a>()</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Pojemnosc</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keywordtype">double</span>  <a class="code hl_function" href="class_osobnik.html#ad81a8f6bfa28032ac463fe0f806326a7">Osobnik::Get_Sumaryczna_cena</a>()</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Sumaryczna_cena</a>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
+<div class="ttc" id="aclass_operacje_html_a7acad4e5cc331d64c511aa97678e16a8"><div class="ttname"><a href="class_operacje.html#a7acad4e5cc331d64c511aa97678e16a8">Operacje::Wczytywanie_Obiektow</a></div><div class="ttdeci">void Wczytywanie_Obiektow(int iloscobiektow, std::vector&lt; Obiekt &gt; &amp;dane)</div><div class="ttdoc">Metoda odczytująca z pliku dane do wektora obiektów.</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00016">Operacje.cpp:16</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_a3604c1658113cfc739ba4d23fd02e79c"><div class="ttname"><a href="class_osobnik.html#a3604c1658113cfc739ba4d23fd02e79c">Osobnik::Osobnik</a></div><div class="ttdeci">Osobnik(std::vector&lt; Obiekt &gt; &amp;dane, int Udzwig, int Iloscobiektow)</div><div class="ttdoc">Metoda osobnika.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00076">Osobnik.cpp:76</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_a36ac8878b3704aa6d7ad1f1d457863a2"><div class="ttname"><a href="class_osobnik.html#a36ac8878b3704aa6d7ad1f1d457863a2">Osobnik::Wyswietl_Chromosom</a></div><div class="ttdeci">void Wyswietl_Chromosom()</div><div class="ttdoc">Metoda ta wyświetla chromosom.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00049">Osobnik.cpp:49</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_a62f150e1ebff82f1c84cec3cbc598038"><div class="ttname"><a href="class_osobnik.html#a62f150e1ebff82f1c84cec3cbc598038">Osobnik::Pojemnosc</a></div><div class="ttdeci">double Pojemnosc</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8h_source.html#l00023">Osobnik.h:23</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_a80b9c696d8fb8cd18dfb87c9362d543a"><div class="ttname"><a href="class_osobnik.html#a80b9c696d8fb8cd18dfb87c9362d543a">Osobnik::Generowanie_Osobnika</a></div><div class="ttdeci">void Generowanie_Osobnika(std::vector&lt; Obiekt &gt; &amp;dane, int Udzwig, int Iloscobiektow)</div><div class="ttdoc">Metoda generująca osobnika.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00020">Osobnik.cpp:20</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_a8c7ee0661299a067ebbc40164ed141e9"><div class="ttname"><a href="class_osobnik.html#a8c7ee0661299a067ebbc40164ed141e9">Osobnik::Wyswietl_Wynik</a></div><div class="ttdeci">void Wyswietl_Wynik()</div><div class="ttdoc">Metoda ta wyświetla wynik.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00063">Osobnik.cpp:63</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_ab436922c693c7a620974a1fb3e448ca7"><div class="ttname"><a href="class_osobnik.html#ab436922c693c7a620974a1fb3e448ca7">Osobnik::Sumaryczna_cena</a></div><div class="ttdeci">double Sumaryczna_cena</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8h_source.html#l00024">Osobnik.h:24</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_ab62fe567a0c425837056d6a844f753bb"><div class="ttname"><a href="class_osobnik.html#ab62fe567a0c425837056d6a844f753bb">Osobnik::Chromosom</a></div><div class="ttdeci">std::vector&lt; int &gt; Chromosom</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8h_source.html#l00027">Osobnik.h:27</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_ac8ae9c3469c0d60f831a4e2d1bda9f1a"><div class="ttname"><a href="class_osobnik.html#ac8ae9c3469c0d60f831a4e2d1bda9f1a">Osobnik::Get_Wynik</a></div><div class="ttdeci">double Get_Wynik()</div><div class="ttdoc">Metoda zwracająca wynik</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00141">Osobnik.cpp:141</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_ace2e26b77ffe5fdf0876051155e8aa8d"><div class="ttname"><a href="class_osobnik.html#ace2e26b77ffe5fdf0876051155e8aa8d">Osobnik::Get_Pojemnosc</a></div><div class="ttdeci">double Get_Pojemnosc()</div><div class="ttdoc">Metoda zwracająca pojemność.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00149">Osobnik.cpp:149</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_ad81a8f6bfa28032ac463fe0f806326a7"><div class="ttname"><a href="class_osobnik.html#ad81a8f6bfa28032ac463fe0f806326a7">Osobnik::Get_Sumaryczna_cena</a></div><div class="ttdeci">double Get_Sumaryczna_cena()</div><div class="ttdoc">Metoda zwracająca sumaryczną cenę.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00157">Osobnik.cpp:157</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_aee68882d4c36a58946aed16a2a655f47"><div class="ttname"><a href="class_osobnik.html#aee68882d4c36a58946aed16a2a655f47">Osobnik::Aktualizuj_Dane</a></div><div class="ttdeci">void Aktualizuj_Dane(std::vector&lt; Obiekt &gt; &amp;dane, int Udzwig)</div><div class="ttdoc">Metoda aktualizujaca dane.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00096">Osobnik.cpp:96</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_af13de080b8e75999a7bf41c3565768f8"><div class="ttname"><a href="class_osobnik.html#af13de080b8e75999a7bf41c3565768f8">Osobnik::Set_Wynik</a></div><div class="ttdeci">void Set_Wynik(double temp)</div><div class="ttdoc">Metoda aktualizująca wynik.</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00133">Osobnik.cpp:133</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_afcc83d1009e673482ed138af037b8e74"><div class="ttname"><a href="class_osobnik.html#afcc83d1009e673482ed138af037b8e74">Osobnik::Wynik</a></div><div class="ttdeci">double Wynik</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8h_source.html#l00022">Osobnik.h:22</a></div></div>
+<div class="ttc" id="aclass_osobnik_html_aff739292c0bf06166c74bcc959f9e6fe"><div class="ttname"><a href="class_osobnik.html#aff739292c0bf06166c74bcc959f9e6fe">Osobnik::~Osobnik</a></div><div class="ttdeci">~Osobnik()</div><div class="ttdoc">Dekonstruktor</div><div class="ttdef"><b>Definition:</b> <a href="_osobnik_8cpp_source.html#l00122">Osobnik.cpp:122</a></div></div>
+<div class="ttc" id="astruct_obiekt_html"><div class="ttname"><a href="struct_obiekt.html">Obiekt</a></div><div class="ttdoc">Struktura obiekt zawiera w sobie cene i wage.</div><div class="ttdef"><b>Definition:</b> <a href="_obiekt_8h_source.html#l00015">Obiekt.h:16</a></div></div>
+<div class="ttc" id="astruct_obiekt_html_a4ca3ea51ca5c7ac913890225ede93667"><div class="ttname"><a href="struct_obiekt.html#a4ca3ea51ca5c7ac913890225ede93667">Obiekt::Waga</a></div><div class="ttdeci">double Waga</div><div class="ttdef"><b>Definition:</b> <a href="_obiekt_8h_source.html#l00020">Obiekt.h:20</a></div></div>
+<div class="ttc" id="astruct_obiekt_html_a55412c4f2c06a6c8b8bb411e13fc1479"><div class="ttname"><a href="struct_obiekt.html#a55412c4f2c06a6c8b8bb411e13fc1479">Obiekt::Cena</a></div><div class="ttdeci">double Cena</div><div class="ttdef"><b>Definition:</b> <a href="_obiekt_8h_source.html#l00019">Obiekt.h:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

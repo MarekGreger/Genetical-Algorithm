@@ -1,0 +1,3 @@
+﻿  Plecak.cpp
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Plecak.cpp(29,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Plecak.vcxproj -> C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Debug\Plecak.exe

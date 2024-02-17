@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algorytm Genetyczny- Problem plecakowy: Plik źródłowy Plecak.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algorytm Genetyczny- Problem plecakowy<span id="projectnumber">&#160;Finałowa wersja</span>
+   </div>
+   <div id="projectbrief">Algorytm działający na zasadzie gentycznej ewolucji znajdującej rozwiązanie problemu plecakowego.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Plecak.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_plecak_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&lt;iostream&gt;</span>    </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include&quot;<a class="code" href="_osobnik_8h.html">Osobnik.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include&quot;<a class="code" href="_obiekt_8h.html">Obiekt.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include&quot;<a class="code" href="_operacje_8h.html">Operacje.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include&quot;<a class="code" href="_wczytywanie___danych_8h.html">Wczytywanie_Danych.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_obsluga__bledow_8h.html">Obsluga_bledow.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_plecak_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   15</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_plecak_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_obsluga__bledow_8cpp.html#ab0fec8076363159954cfdeaa8a791982">Obsluga_bledow</a>(argc, 10, 10) == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> Udzwig_Plecaka = atoi(argv[3]);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> Rozmiar_Populacji = atoi(argv[4]);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::vector&lt;Obiekt&gt; Dane;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::vector&lt;Osobnik&gt; Populacja;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="_wczytywanie___danych_8cpp.html#a63b2156368019daf9c4c8a56f6d3c44f">Wczytanie_danych</a>(argv[1], Dane);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_obsluga__bledow_8cpp.html#ab0fec8076363159954cfdeaa8a791982">Obsluga_bledow</a>(argc, Udzwig_Plecaka, Rozmiar_Populacji) == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">int</span> Ilosc_Rzeczy = Dane.size();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="class_operacje.html">Operacje</a>* Test=<span class="keyword">new</span> <a class="code hl_class" href="class_operacje.html">Operacje</a>(Dane, Udzwig_Plecaka,Ilosc_Rzeczy);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    srand(time(NULL));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Test-&gt;<a class="code hl_function" href="class_operacje.html#afda383d0ed7fe289c382470240831903">Generowanie_Populacji</a>(Dane, Udzwig_Plecaka, Ilosc_Rzeczy, Rozmiar_Populacji, Populacja);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Test-&gt;<a class="code hl_function" href="class_operacje.html#ac16ee9d05d6d251f78025e3e279fb677">Selekcja</a>(Populacja);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Test-&gt;<a class="code hl_function" href="class_operacje.html#a218b7b0406a08bb40c0fc9f153c383ba">Wyswietl_Populacje</a>(Populacja);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Test-&gt;<a class="code hl_function" href="class_operacje.html#a6b6e5980cff3798ea1d517da7c366463">Ocena</a>(Populacja);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">while</span> (Test-&gt;<a class="code hl_variable" href="class_operacje.html#a5195e6f47f0bfeb76f2b8288e7dc0acc">sprawdzajacy</a>==<span class="keyword">false</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Po krzyzowaniu&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        Test-&gt;<a class="code hl_function" href="class_operacje.html#a947d03f24ba39982999960763826e766">Krzyzowanie</a>(Populacja, Dane, Udzwig_Plecaka);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">//Wyswietl_Populacje(Populacja);</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        Test-&gt;<a class="code hl_function" href="class_operacje.html#a54c00bc5f56680971f7bc049cee8a87e">Mutacja</a>(Populacja, 0.1, Dane, Udzwig_Plecaka);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        Test-&gt;<a class="code hl_function" href="class_operacje.html#ac16ee9d05d6d251f78025e3e279fb677">Selekcja</a>(Populacja);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Po mutacji&quot;</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        Test-&gt;<a class="code hl_function" href="class_operacje.html#a218b7b0406a08bb40c0fc9f153c383ba">Wyswietl_Populacje</a>(Populacja);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        Test-&gt;<a class="code hl_function" href="class_operacje.html#a6b6e5980cff3798ea1d517da7c366463">Ocena</a>(Populacja);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        Test-&gt;<a class="code hl_function" href="class_operacje.html#a93e016c3cf5f42a89ba8fa24a21c6f1f">Set_ile</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    cout &lt;&lt; endl &lt;&lt; Test-&gt;<a class="code hl_function" href="class_operacje.html#a02434d67498804b32c9311a64cf7f080">Get_ile</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    Test-&gt;<a class="code hl_function" href="class_operacje.html#a467f5ccf9d691d003af0a21c0bcfc3dd">Zapis</a>(argv[2], Populacja);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>Populacja.clear();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="ttc" id="a_obiekt_8h_html"><div class="ttname"><a href="_obiekt_8h.html">Obiekt.h</a></div></div>
+<div class="ttc" id="a_obsluga__bledow_8cpp_html_ab0fec8076363159954cfdeaa8a791982"><div class="ttname"><a href="_obsluga__bledow_8cpp.html#ab0fec8076363159954cfdeaa8a791982">Obsluga_bledow</a></div><div class="ttdeci">bool Obsluga_bledow(const int &amp;argc, int Udzwig_Plecaka, int Rozmiar_Populacji)</div><div class="ttdef"><b>Definition:</b> <a href="_obsluga__bledow_8cpp_source.html#l00013">Obsluga_bledow.cpp:13</a></div></div>
+<div class="ttc" id="a_obsluga__bledow_8h_html"><div class="ttname"><a href="_obsluga__bledow_8h.html">Obsluga_bledow.h</a></div></div>
+<div class="ttc" id="a_operacje_8h_html"><div class="ttname"><a href="_operacje_8h.html">Operacje.h</a></div></div>
+<div class="ttc" id="a_osobnik_8h_html"><div class="ttname"><a href="_osobnik_8h.html">Osobnik.h</a></div></div>
+<div class="ttc" id="a_plecak_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="_plecak_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="_plecak_8cpp_source.html#l00015">Plecak.cpp:15</a></div></div>
+<div class="ttc" id="a_wczytywanie___danych_8cpp_html_a63b2156368019daf9c4c8a56f6d3c44f"><div class="ttname"><a href="_wczytywanie___danych_8cpp.html#a63b2156368019daf9c4c8a56f6d3c44f">Wczytanie_danych</a></div><div class="ttdeci">void Wczytanie_danych(const std::string &amp;nazwapliku, std::vector&lt; Obiekt &gt; &amp;dane)</div><div class="ttdef"><b>Definition:</b> <a href="_wczytywanie___danych_8cpp_source.html#l00014">Wczytywanie_Danych.cpp:14</a></div></div>
+<div class="ttc" id="a_wczytywanie___danych_8h_html"><div class="ttname"><a href="_wczytywanie___danych_8h.html">Wczytywanie_Danych.h</a></div></div>
+<div class="ttc" id="aclass_operacje_html"><div class="ttname"><a href="class_operacje.html">Operacje</a></div><div class="ttdoc">Klasa Operacje jest klasa dziedziczaca po klasie osobnik.</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8h_source.html#l00016">Operacje.h:17</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a02434d67498804b32c9311a64cf7f080"><div class="ttname"><a href="class_operacje.html#a02434d67498804b32c9311a64cf7f080">Operacje::Get_ile</a></div><div class="ttdeci">int Get_ile()</div><div class="ttdoc">Funkcja zwracająca</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00264">Operacje.cpp:264</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a218b7b0406a08bb40c0fc9f153c383ba"><div class="ttname"><a href="class_operacje.html#a218b7b0406a08bb40c0fc9f153c383ba">Operacje::Wyswietl_Populacje</a></div><div class="ttdeci">void Wyswietl_Populacje(std::vector&lt; Osobnik &gt; &amp;populacja)</div><div class="ttdoc">Metoda wyswietlajaca populacji</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00128">Operacje.cpp:128</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a467f5ccf9d691d003af0a21c0bcfc3dd"><div class="ttname"><a href="class_operacje.html#a467f5ccf9d691d003af0a21c0bcfc3dd">Operacje::Zapis</a></div><div class="ttdeci">void Zapis(const std::string &amp;nazwapliku, std::vector&lt; Osobnik &gt; &amp;populacja)</div><div class="ttdoc">Metoda zapisująca ostateczną populację do pliku</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00215">Operacje.cpp:215</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a5195e6f47f0bfeb76f2b8288e7dc0acc"><div class="ttname"><a href="class_operacje.html#a5195e6f47f0bfeb76f2b8288e7dc0acc">Operacje::sprawdzajacy</a></div><div class="ttdeci">bool sprawdzajacy</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8h_source.html#l00019">Operacje.h:19</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a54c00bc5f56680971f7bc049cee8a87e"><div class="ttname"><a href="class_operacje.html#a54c00bc5f56680971f7bc049cee8a87e">Operacje::Mutacja</a></div><div class="ttdeci">void Mutacja(std::vector&lt; Osobnik &gt; &amp;populacja, double Prawdopodobienstwo, std::vector&lt; Obiekt &gt; &amp;dane, int Udzwig)</div><div class="ttdoc">Metoda zawierająca mutację</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00147">Operacje.cpp:147</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a6b6e5980cff3798ea1d517da7c366463"><div class="ttname"><a href="class_operacje.html#a6b6e5980cff3798ea1d517da7c366463">Operacje::Ocena</a></div><div class="ttdeci">void Ocena(std::vector&lt; Osobnik &gt; &amp;populacja)</div><div class="ttdoc">Metoda oceny kiedy algorytm się zakończy</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00180">Operacje.cpp:180</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a93e016c3cf5f42a89ba8fa24a21c6f1f"><div class="ttname"><a href="class_operacje.html#a93e016c3cf5f42a89ba8fa24a21c6f1f">Operacje::Set_ile</a></div><div class="ttdeci">void Set_ile()</div><div class="ttdoc">Metoda iteracyjna</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00253">Operacje.cpp:253</a></div></div>
+<div class="ttc" id="aclass_operacje_html_a947d03f24ba39982999960763826e766"><div class="ttname"><a href="class_operacje.html#a947d03f24ba39982999960763826e766">Operacje::Krzyzowanie</a></div><div class="ttdeci">void Krzyzowanie(std::vector&lt; Osobnik &gt; &amp;populacja, std::vector&lt; Obiekt &gt; &amp;dane, int Udzwig)</div><div class="ttdoc">Metoda krzyżowania</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00070">Operacje.cpp:70</a></div></div>
+<div class="ttc" id="aclass_operacje_html_ac16ee9d05d6d251f78025e3e279fb677"><div class="ttname"><a href="class_operacje.html#ac16ee9d05d6d251f78025e3e279fb677">Operacje::Selekcja</a></div><div class="ttdeci">void Selekcja(std::vector&lt; Osobnik &gt; &amp;populacja)</div><div class="ttdoc">Metoda selekcji czyli wyboru najlepszych osobników</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00056">Operacje.cpp:56</a></div></div>
+<div class="ttc" id="aclass_operacje_html_afda383d0ed7fe289c382470240831903"><div class="ttname"><a href="class_operacje.html#afda383d0ed7fe289c382470240831903">Operacje::Generowanie_Populacji</a></div><div class="ttdeci">void Generowanie_Populacji(std::vector&lt; Obiekt &gt; &amp;dane, int Udzwig, int Iloscobiektow, int Ilosc_populacji, std::vector&lt; Osobnik &gt; &amp;populacja)</div><div class="ttdoc">Metoda generująca populację.</div><div class="ttdef"><b>Definition:</b> <a href="_operacje_8cpp_source.html#l00036">Operacje.cpp:36</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

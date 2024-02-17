@@ -1,0 +1,20 @@
+﻿  Obsluga_bledow.cpp
+  Operacje.cpp
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Operacje.cpp(84,41): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Operacje.cpp(106,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Operacje.cpp(134,19): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Operacje.cpp(161,19): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Operacje.cpp(227,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Operacje.cpp(241,13): warning C4101: "code": lokalna zmienna, do której nie istnieje odwołanie
+  Osobnik.cpp
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Osobnik.cpp(55,19): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Osobnik.cpp(105,19): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Plecak.cpp
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Plecak.cpp(28,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Wczytywanie_Danych.cpp
+C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Plecak\Wczytywanie_Danych.cpp(35,13): warning C4101: "code": lokalna zmienna, do której nie istnieje odwołanie
+  Trwa generowanie kodu
+  Previous IPDB not found, fall back to full compilation.
+  All 392 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Zakończono generowanie kodu
+  Plecak.vcxproj -> C:\Users\grege\Documents\GitHub\f6dcff2d-gr11-repo\Projekt\Plecak\Release\Plecak.exe
